@@ -1,7 +1,12 @@
 name: fabrikate-spartan-cluster
 subcomponents:
-- name: prometheus
-  generator: component
-  source: https://github.com/timfpark/fabrikate-prometheus-grafana
+- name: spartan-service
+  generator: helm
+  source: https://github.com/andrebriggs/spartan-app
   method: git
-  branch: master
+  path: "chart"
+# - name: prometheus-grafana
+#   generator: component
+#   source: https://github.com/timfpark/fabrikate-prometheus-grafana
+#   method: git
+#   branch: master
