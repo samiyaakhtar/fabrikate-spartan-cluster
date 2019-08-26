@@ -5,7 +5,7 @@ subcomponents:
       image:
         pullPolicy: IfNotPresent
         repository: andrebriggs.azurecr.io/andrebriggs/spartan-app
-        tag: "20190826.1"
+        tag: "20190826.25"
       minReadySeconds: 5
       replicaCount: 1
       service:
