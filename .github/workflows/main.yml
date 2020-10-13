@@ -1,4 +1,3 @@
-
 name: manifest generation
 on:
   push:
@@ -15,6 +14,7 @@ env:
   INTROSPECTION_ACCOUNT_NAME: abrigspksetup
   INTROSPECTION_PARTITION_KEY: spektate-key
   INTROSPECTION_TABLE_NAME: spektatetable
+  COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
 
 jobs:
   build:
@@ -45,7 +45,7 @@ jobs:
           commitId=$GITHUB_SHA
           commitId=$(echo "${commitId:0:7}")
 
-          message="$(Build.SourceVersionMessage)"
+          message="$COMMIT_MESSAGE"
 
           if [[ $message == *"Merge"* ]]; then
           pr_id=$(echo $message | grep -oE '[0-9]+' | head -1 | sed -e 's/^0\\+//')
