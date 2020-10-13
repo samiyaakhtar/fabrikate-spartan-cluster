@@ -73,10 +73,10 @@ jobs:
         run: |
           set -e
 
-          cd "$HOME"/${MANIFEST_REPO##*/}
-
           chmod +x ./bedrock_helpers.sh
           . ./bedrock_helpers.sh --source-only
+
+          cd "$HOME"/${MANIFEST_REPO##*/}
           get_bedrock_version
           download_bedrock
 
